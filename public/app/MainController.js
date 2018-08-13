@@ -51,10 +51,18 @@ function MainController($scope, $rootScope, $location, MainService) {
 
 	$scope.updateCard = function(listName, index,cardName){
 		
-		var listIndex = $scope.validateIndex(listName, index,cardName);
+		var listIndex = $scope.validateIndex(listName,index,cardName);
 		if(listIndex != -1){
 			$scope.lists[listIndex].cardTitles[index].updateItem = false;
 			$scope.lists[listIndex].cardTitles[index].title=cardName;
+		}
+		
+	}
+
+	$scope.removeItem = function(listName, index){
+		var listIndex = $scope.validateIndex(listName, index);
+		if(listIndex != -1){
+			$scope.lists[listIndex].cardTitles.splice(index,1);
 		}
 		
 	}
@@ -91,7 +99,10 @@ function MainController($scope, $rootScope, $location, MainService) {
 	$scope.closeUpdate= function(index){
 		$scope.lists[index].addItem= false;
 
+
 	}
+
+	
 	
 	$scope.getlists();
 

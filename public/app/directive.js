@@ -38,7 +38,7 @@
 							'<div class="card-header card-header-color"  id="headingOne">'+
 								'<h5 class="mb-0">'+
 									'<span  class="listTitle pb-4"><strong>{{list.listName}}</strong></span>'+
-									'<div class="row" ng-repeat="item in list.cardTitles"><span ng-show="!item.updateItem" class=" col-md-10 listItem">{{item.title}} <button class="editStyle" ng-click="edittedCard(list.listName,$index,item.title)">&#9998;</button></span>'+
+									'<div class="row" ng-repeat="item in list.cardTitles"><span ng-show="!item.updateItem" class=" col-md-10 listItem">{{item.title}} <button class="editStyle" ng-click="edittedCard(list.listName,$index,item.title)">&#9998;</button><span class="editStyle" ng-click="removeItem(list.listName,$index)" aria-hidden="true" >&times;</span></span>'+
 									'<div class="card-body"  ng-show="item.updateItem" >'+
 									'<div class="row">'+
 									    '<input type="text" class="form-control" id="listName" value="item.title" ng-model="item.title" placeholder="Update card title">'+
